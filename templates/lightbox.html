@@ -1,0 +1,16 @@
+<h1>{{photoset.ownername}}</h1>
+<button class="nav btn" id="prev">&lt;</button>
+<button class="nav btn" id="next">&gt</button>
+<div class="mask">
+	<ul>
+	{{#each photoset.photo}}
+		<li style="background-image: url({{url}})">
+			<div class="caption">
+				<h1>{{title}}</h1>
+				<span>by {{ownername}}</span>
+			</div>
+			<div class="pleasewait"></div>
+		</li>
+	{{/each}}
+	</ul>
+</div>
