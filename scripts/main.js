@@ -1,5 +1,5 @@
 /**
- * Flickr Exercise
+ * LegoReel
  * @author  Stefano Bertacchi <stefano@touristway.com>
  */
 
