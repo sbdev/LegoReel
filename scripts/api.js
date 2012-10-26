@@ -3,24 +3,29 @@ define(['util'], function(util) {
 
 	'use strict';
 
-	/**
-	http://api.flickr.com/services/rest/?
-	method=flickr.photosets.getPhotos&
-	api_key=f38f22bdf3850cabe0fc79a88aff214e&
-	photoset_id=72157627991527122&
-	format=json&
-	nojsoncallback=1"
-	per_page (Optional)
-	page (Optional)
-	media
-	*/
-
 	var apiKey = '5b7ed26a7c0c3b67e3a1a28c141c5c19';
 
+	/**
+	 * Static class to abstract REST calls
+	 * @class
+	 * @static
+	 */
 	var api = {
 
+		/**
+		 * Base url of the service
+		 * @property {String} Base url of the service
+		 */
 		endPoint: 'http://api.flickr.com/services/rest/',
 
+		/**
+		 * Executes the XHR call to the API
+		 * @private
+		 * @param  {String} method Resource and method, i.e. flickr.photosets.getPhotos
+		 * @param  {Object} params Filters
+		 * @param  {Function} onSuccess Success callback
+		 * @param  {Function} onError Failure callback
+		 */
 		send: function(method, params, onSuccess, onError) {
 
 			params = util.extend({
@@ -59,6 +64,13 @@ define(['util'], function(util) {
 
 		},
 
+		/**
+		 * Abstraction for flickr.photosets.getPhotos method.
+		 * Assembles the photo url too
+		 * @param  {[type]} filter Parameters such as photoset ID or page
+		 * @param  {Function} onSuccess Success callback (pass the parsed data)
+		 * @param  {Function} onError Failure callback
+		 */
 		getPhotoSet: function(filter, onSuccess, onError) {
 
 			this.send('flickr.photosets.getPhotos', {

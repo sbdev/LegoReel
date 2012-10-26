@@ -24,6 +24,7 @@ define(['vendor/handlebars.amd'], function(Handlebars) {
 		},
 
 		onTransitionEnd: function(el, callback){
+
 			var eventNames = {
 				'WebkitTransition': 'webkitTransitionEnd',
 				'MozTransition': 'transitionend',

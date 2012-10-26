@@ -14,7 +14,7 @@
 	 * all dependencies will go through RequireJS Optimizer for concat/minification
 	 */
 	require.config({
-		baseUrl: '/scripts',
+		baseUrl: './scripts',
 		paths: {
 			// base folder is /scripts
 			text: 'vendor/text',
